@@ -1,4 +1,4 @@
-package com.example.Activities;
+package com.example.UI.Activities;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -30,7 +30,7 @@ import java.text.NumberFormat;
 import java.util.Date;
 import java.util.Objects;
 
-public class MainActivity extends AppCompatActivity {
+public class WorldActivity extends AppCompatActivity {
 
     TextView tv_tests_global, tv_time_global, tv_country_global,
             active_mil_global, recovered_mil_global, deaths_mil_global, population_global,
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_world);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.global);
@@ -63,7 +63,12 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                     case R.id.home:
                         startActivity(new Intent(getApplicationContext()
-                                , WorldDataActivity.class));
+                                , HomeActivity.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.egypt:
+                        startActivity(new Intent(getApplicationContext()
+                                , MainActivity.class));
                         overridePendingTransition(0, 0);
                         return true;
                     case R.id.search:
@@ -161,7 +166,7 @@ public class MainActivity extends AppCompatActivity {
 
                                 public void DismissDialog() {
                                     progressDialog.dismiss();
-                                    Toast.makeText(MainActivity.this, "اطلاعات  دریافت  شد", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(WorldActivity.this, "اطلاعات  دریافت  شد", Toast.LENGTH_SHORT).show();
                                 }
 
                             }, 4200);

@@ -1,4 +1,4 @@
-package com.example.Activities;
+package com.example.UI.Activities;
 
 import android.animation.ValueAnimator;
 import android.app.ProgressDialog;
@@ -30,7 +30,7 @@ import org.json.JSONObject;
 import java.text.NumberFormat;
 import java.util.Objects;
 
-public class WorldDataActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity {
 
     TextView tv_confirmed, tv_confirmed_new, tv_active,
             tv_recovered, tv_recovered_new, tv_death, tv_death_new, tv_critical;
@@ -47,7 +47,7 @@ public class WorldDataActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_world_data);
+        setContentView(R.layout.activity_home);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.home);
@@ -57,7 +57,12 @@ public class WorldDataActivity extends AppCompatActivity {
 
                 switch (item.getItemId()) {
                     case R.id.global:
-                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        startActivity(new Intent(getApplicationContext(), WorldActivity.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.egypt:
+                        startActivity(new Intent(getApplicationContext()
+                                , MainActivity.class));
                         overridePendingTransition(0, 0);
                         return true;
                     case R.id.home:
@@ -79,7 +84,7 @@ public class WorldDataActivity extends AppCompatActivity {
             public void onRefresh() {
                 FetchWorldData();
                 swipeRefreshLayout.setRefreshing(false);
-                //Toast.makeText(MainActivity.this, "Data refreshed!", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(WorldActivity.this, "Data refreshed!", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -193,8 +198,8 @@ public class WorldDataActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.menu_about) {
-            //Toast.makeText(MainActivity.this, "About menu icon clicked", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(WorldDataActivity.this, AboutActivity.class));
+            //Toast.makeText(WorldActivity.this, "About menu icon clicked", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(HomeActivity.this, AboutActivity.class));
         }
         return super.onOptionsItemSelected(item);
     }

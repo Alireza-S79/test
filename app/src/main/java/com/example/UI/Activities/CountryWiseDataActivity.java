@@ -1,4 +1,4 @@
-package com.example.Activities;
+package com.example.UI.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -45,7 +45,7 @@ public class CountryWiseDataActivity extends AppCompatActivity {
     private String str_country, str_confirmed, str_confirmed_new, str_active, str_recovered, str_recovered_new,
             str_death, str_death_new, str_tests, str_population,str_continent;
 
-    private WorldDataActivity activity = new WorldDataActivity();
+    private HomeActivity activity = new HomeActivity();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,12 +62,17 @@ public class CountryWiseDataActivity extends AppCompatActivity {
                 switch (item.getItemId()) {
                     case R.id.global:
                         startActivity(new Intent(getApplicationContext()
-                                , MainActivity.class));
+                                , WorldActivity.class));
                         overridePendingTransition(0, 0);
                         return true;
                     case R.id.home:
                         startActivity(new Intent(getApplicationContext()
-                                , WorldDataActivity.class));
+                                , HomeActivity.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.egypt:
+                        startActivity(new Intent(getApplicationContext()
+                                , MainActivity.class));
                         overridePendingTransition(0, 0);
                         return true;
                     case R.id.search:

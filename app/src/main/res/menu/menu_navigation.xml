@@ -16,4 +16,10 @@
         android:icon="@drawable/ic_search"
         android:title="جستجو" />
 
+    <item
+        android:id="@+id/egypt"
+        android:icon="@drawable/ic_unit"
+        android:title="مصر" />
+
+
 </menu>

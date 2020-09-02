@@ -1,4 +1,4 @@
-package com.example.Activities;
+package com.example.UI.Activities;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -27,12 +27,17 @@ public class AboutActivity extends AppCompatActivity {
                 switch (item.getItemId()) {
                     case R.id.global:
                         startActivity(new Intent(getApplicationContext()
-                                , MainActivity.class));
+                                , WorldActivity.class));
                         overridePendingTransition(0, 0);
                         return true;
                     case R.id.home:
                         startActivity(new Intent(getApplicationContext()
-                                , WorldDataActivity.class));
+                                , HomeActivity.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.egypt:
+                        startActivity(new Intent(getApplicationContext()
+                                , MainActivity.class));
                         overridePendingTransition(0, 0);
                         return true;
                     case R.id.search:

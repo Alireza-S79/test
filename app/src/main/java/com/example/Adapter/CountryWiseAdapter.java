@@ -17,7 +17,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.example.Activities.EachCountryDataActivity;
+import com.example.UI.Activities.EachCountryDataActivity;
 import com.example.Models.CountyWiseModel;
 import com.example.covid19tracker.R;
 

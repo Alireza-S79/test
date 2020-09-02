@@ -1,4 +1,4 @@
-package com.example.Activities;
+package com.example.UI.Activities;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -38,7 +38,7 @@ public class EachCountryDataActivity extends AppCompatActivity {
     private String str_confirmed_c, str_confirmed_new_c, str_active_c, str_death_c, str_death_new_c,
             str_recovered_c, str_recovered_new_c, str_population_c, flag, str_countryName_c, str_critical_c, str_continent;
     private PieChart pieChart_c;
-    private WorldDataActivity activity = new WorldDataActivity();
+    private HomeActivity activity = new HomeActivity();
 
     private ImageView flag_image;
 

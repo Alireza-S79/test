@@ -1,4 +1,4 @@
-package com.example.Activities;
+package com.example.UI.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -31,7 +31,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(SplashScreenActivity.this, WorldDataActivity.class);
+                Intent intent = new Intent(SplashScreenActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
             }

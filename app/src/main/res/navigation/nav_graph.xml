@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/egyptFragment">
+
+    <fragment
+        android:id="@+id/egyptFragment"
+        android:name="com.example.UI.Fragments.EgyptFragment"
+        android:label="fragment_egypt"
+        tools:layout="@layout/fragment_egypt" />
+</navigation>
