@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Covid News</string>
+    <string name="version">v1.0.0</string>
+    <string name="initStr">Covid News</string>
+    <string name="search">جستجو</string>
+    <string name="country">کشور</string>
+    <string name="cases">مبتلا شدگان</string>
+    <string name="active">مبتلا</string>
+    <string name="recovered">بهبود یافته</string>
+    <string name="death">جان باخته</string>
+    <string name="active_persons">مبتلایان</string>
+    <string name="all_active">کل مبتلایان :</string>
+    <string name="critical">در وضعیت وخیم :</string>
+    <string name="death_persons">جانباختگان</string>
+    <string name="all_death">کل جانباختگان :</string>
+    <string name="new_death">جانباختگان امروز :</string>
+    <string name="recovered_persons">بهبود یافتگان</string>
+    <string name="all_recovered">کل بهبودیافتگان :</string>
+    <string name="new_recovered">بهبودیافتگان امروز :</string>
+    <string name="cases_persons">شناسایی شدگان</string>
+    <string name="all_cases">کل شناسایی شدگان:</string>
+    <string name="new_cases">شناسایی شدگان امروز:</string>
+</resources>
