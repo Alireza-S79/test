@@ -20,7 +20,6 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.UI.Activities.EachCountryDataActivity;
 import com.example.Models.CountyWiseModel;
 import com.example.covid19tracker.R;
-
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
