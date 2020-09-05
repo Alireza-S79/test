@@ -10,4 +10,10 @@
         android:name="com.example.UI.Fragments.EgyptFragment"
         android:label="fragment_egypt"
         tools:layout="@layout/fragment_egypt" />
+
+    <fragment
+        android:id="@+id/worldFragment"
+        android:name="com.example.UI.Fragments.WorldFragment"
+        android:label="fragment_world"
+        tools:layout="@layout/fragment_world" />
 </navigation>

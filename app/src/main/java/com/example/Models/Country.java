@@ -2,7 +2,6 @@ package com.example.Models;
 
 public class Country {
 
-
     private double deathsPerOneMillion;
     private double casesPerOneMillion;
     private long critical;
