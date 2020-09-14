@@ -3,14 +3,16 @@ package com.example.ViewModels;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
+
 import com.example.API.RetrofitAPI;
 import com.example.Models.Country;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class EgyptViewModel extends ViewModel {
-    MutableLiveData<Country> egypt;
+public class IRViewModel extends ViewModel {
+    MutableLiveData<Country> iran;
     MutableLiveData<Boolean> isLoading = new MutableLiveData<>();
     MutableLiveData<Boolean> isError = new MutableLiveData<>();
 
@@ -22,24 +24,24 @@ public class EgyptViewModel extends ViewModel {
         return isError;
     }
 
-    public LiveData<Country> getEgypt() {
-        if (egypt == null) {
-            egypt = new MutableLiveData<>();
+    public LiveData<Country> getIran() {
+        if (iran == null) {
+            iran = new MutableLiveData<>();
             getNewCases();
         }
-        return egypt;
+        return iran;
     }
 
     private void getNewCases() {
         isError.postValue(false);
         isLoading.postValue(true);
-        Call<Country> call = RetrofitAPI.getInstance().getEgyptCases();
+        Call<Country> call = RetrofitAPI.getInstance().getIranCases();
         call.enqueue(new Callback<Country>() {
             @Override
             public void onResponse(Call<Country> call, Response<Country> response) {
                 isLoading.postValue(false);
                 if (response.isSuccessful()) {
-                    egypt.postValue(response.body());
+                    iran.postValue(response.body());
                 } else {
                     isError.postValue(true);
                 }

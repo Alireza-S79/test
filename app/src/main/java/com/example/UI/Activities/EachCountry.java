@@ -12,7 +12,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import com.bumptech.glide.Glide;
 import com.example.covid19tracker.R;
-
 import org.eazegraph.lib.charts.PieChart;
 import org.eazegraph.lib.models.PieModel;
 import java.text.NumberFormat;
@@ -30,15 +29,17 @@ import static com.example.Constants.COUNTRY_NEW_RECOVERED;
 import static com.example.Constants.COUNTRY_POPULATION;
 import static com.example.Constants.COUNTRY_RECOVERED;
 
-public class EachCountryDataActivity extends AppCompatActivity {
+public class EachCountry extends AppCompatActivity {
 
     private TextView tv_confirmed_c, tv_confirmed_new_c, tv_active_c, tv_death_c, tv_death_new_c,
             tv_recovered_c, tv_recovered_new_c, tv_population_c, tv_critical_c, tv_continent;
 
     private String str_confirmed_c, str_confirmed_new_c, str_active_c, str_death_c, str_death_new_c,
-            str_recovered_c, str_recovered_new_c, str_population_c, flag, str_countryName_c, str_critical_c, str_continent;
+    str_recovered_c, str_recovered_new_c, str_population_c, flag, str_countryName_c, str_critical_c, str_continent;
+
     private PieChart pieChart_c;
-    private HomeActivity activity = new HomeActivity();
+
+    private CountryWise activity = new CountryWise();
 
     private ImageView flag_image;
 
@@ -77,29 +78,26 @@ public class EachCountryDataActivity extends AppCompatActivity {
     private void LoadCountryData() {
         activity.ShowDialog(this);
         Handler postDelayToshowProgress = new Handler();
-        postDelayToshowProgress.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                tv_confirmed_c.setText(NumberFormat.getInstance().format(Integer.parseInt(str_confirmed_c)));
-                tv_confirmed_new_c.setText("+" + NumberFormat.getInstance().format(Integer.parseInt(str_confirmed_new_c)));
-                tv_active_c.setText(NumberFormat.getInstance().format(Integer.parseInt(str_active_c)));
-                tv_death_c.setText(NumberFormat.getInstance().format(Integer.parseInt(str_death_c)));
-                tv_death_new_c.setText("+" + NumberFormat.getInstance().format(Integer.parseInt(str_death_new_c)));
-                tv_recovered_c.setText(NumberFormat.getInstance().format(Integer.parseInt(str_recovered_c)));
-                tv_recovered_new_c.setText("+" + NumberFormat.getInstance().format(Integer.parseInt(str_recovered_new_c)));
-                tv_population_c.setText(NumberFormat.getInstance().format(Integer.parseInt(str_population_c)));
-                tv_critical_c.setText(NumberFormat.getInstance().format(Integer.parseInt(str_critical_c)));
-                tv_continent.setText(str_continent);
-                Glide.with(getApplicationContext()).load(flag).into(flag_image);
+        postDelayToshowProgress.postDelayed(() -> {
+            tv_confirmed_c.setText(NumberFormat.getInstance().format(Integer.parseInt(str_confirmed_c)));
+            tv_confirmed_new_c.setText("+" + NumberFormat.getInstance().format(Integer.parseInt(str_confirmed_new_c)));
+            tv_active_c.setText(NumberFormat.getInstance().format(Integer.parseInt(str_active_c)));
+            tv_death_c.setText(NumberFormat.getInstance().format(Integer.parseInt(str_death_c)));
+            tv_death_new_c.setText("+" + NumberFormat.getInstance().format(Integer.parseInt(str_death_new_c)));
+            tv_recovered_c.setText(NumberFormat.getInstance().format(Integer.parseInt(str_recovered_c)));
+            tv_recovered_new_c.setText("+" + NumberFormat.getInstance().format(Integer.parseInt(str_recovered_new_c)));
+            tv_population_c.setText(NumberFormat.getInstance().format(Integer.parseInt(str_population_c)));
+            tv_critical_c.setText(NumberFormat.getInstance().format(Integer.parseInt(str_critical_c)));
+            tv_continent.setText(str_continent);
 
-                //setting piechart
-                pieChart_c.addPieSlice(new PieModel("Active", Integer.parseInt(str_active_c), Color.parseColor("#fccb88")));
-                pieChart_c.addPieSlice(new PieModel("Recovered", Integer.parseInt(str_recovered_c), Color.parseColor("#42f58d")));
-                pieChart_c.addPieSlice(new PieModel("Deceased", Integer.parseInt(str_death_c), Color.parseColor("#ff748f")));
-                pieChart_c.startAnimation();
-                activity.DismissDialog();
-                Toast.makeText(EachCountryDataActivity.this, "اطلاعات  دریافت  شد", Toast.LENGTH_SHORT).show();
-            }
+            Glide.with(getApplicationContext()).load(flag).into(flag_image);
+
+            pieChart_c.addPieSlice(new PieModel("Active", Integer.parseInt(str_active_c), Color.parseColor("#fccb88")));
+            pieChart_c.addPieSlice(new PieModel("Recovered", Integer.parseInt(str_recovered_c), Color.parseColor("#42f58d")));
+            pieChart_c.addPieSlice(new PieModel("Deceased", Integer.parseInt(str_death_c), Color.parseColor("#ff748f")));
+            pieChart_c.startAnimation();
+            activity.DismissDialog();
+            Toast.makeText(EachCountry.this, "اطلاعات  دریافت  شد", Toast.LENGTH_SHORT).show();
         }, 1000);
 
     }

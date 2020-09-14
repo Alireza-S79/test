@@ -5,7 +5,7 @@
     android:id="@+id/activity_country_wise_swipe_refresh_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.UI.Activities.CountryWiseDataActivity">
+    tools:context="com.example.UI.Activities.Main">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -59,8 +59,8 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="51.5sp"
-                        android:layout_weight="2"
+                        android:layout_marginStart="47sp"
+                        android:layout_weight="1"
                         android:gravity="end"
                         android:lines="1"
                         android:text="@string/country"
@@ -71,17 +71,16 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="5sp"
-                        android:layout_weight="1"
+                        android:layout_weight="2"
                         android:ellipsize="end"
                         android:gravity="start"
                         android:lines="1"
-                        android:text="@string/cases"
+                        android:text="شناسایی شدگان"
                         android:textColor="#3C6F87"
                         android:textSize="20sp" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
-
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/activity_country_wise_recyclerview"
@@ -90,17 +89,6 @@
                 android:layout_marginTop="5dp" />
 
         </LinearLayout>
-
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottom_navigation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:background="@color/colorPrimary"
-            app:itemBackground="@color/colorPrimary"
-            app:itemIconTint="@drawable/selector"
-            app:itemTextColor="@drawable/selector"
-            app:menu="@menu/menu_navigation" />
 
     </RelativeLayout>
 

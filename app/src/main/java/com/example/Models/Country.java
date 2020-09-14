@@ -4,15 +4,82 @@ public class Country {
 
     private double deathsPerOneMillion;
     private double casesPerOneMillion;
-    private long critical;
-    private long active;
-    private long recovered;
-    private long todayDeaths;
-    private long deaths;
-    private long todayCases;
-    private long cases;
+    private double testsPerOneMillion;
+
+    private String oneCasePerPeople;
+    private String oneDeathPerPeople;
+    private String oneTestPerPeople;
+
+    private String critical;
+    private String active;
+    private String recovered;
+    private String todayRecovered;
+    private String todayDeaths;
+    private String deaths;
+    private String todayCases;
+    private String cases;
     private CountryInfo countryInfo;
     private String country;
+    private String confirmed;
+    private String population;
+    private String tests;
+
+
+    public double getTestsPerOneMillion() {
+        return testsPerOneMillion;
+    }
+
+    public void setTestsPerOneMillion(double testsPerOneMillion) {
+        this.testsPerOneMillion = testsPerOneMillion;
+    }
+
+    public String getTodayRecovered() {
+        return todayRecovered;
+    }
+
+    public void setTodayRecovered(String todayRecovered) {
+        this.todayRecovered = todayRecovered;
+    }
+
+    public String getTests() {
+        return tests;
+    }
+
+    public void setTests(String tests) {
+        this.tests = tests;
+    }
+
+    public String getOneDeathPerPeople() {
+        return oneDeathPerPeople;
+    }
+
+    public void setOneDeathPerPeople(String oneDeathPerPeople) {
+        this.oneDeathPerPeople = oneDeathPerPeople;
+    }
+
+    public String getOneTestPerPeople() {
+        return oneTestPerPeople;
+    }
+
+    public void setOneTestPerPeople(String oneTestPerPeople) {
+        this.oneTestPerPeople = oneTestPerPeople;
+    }
+
+    public String getPopulation() {
+        return population;
+    }
+
+    public void setPopulation(String population) {
+        this.population = population;
+    }
+
+    public String getOneCasePerPeople() {
+        return oneCasePerPeople;
+    }
+
+    public void setOneCasePerPeople(String oneCasePerPeople) {
+        this.oneCasePerPeople = oneCasePerPeople;
+    }
 
     public double getDeathsPerOneMillion() {
         return deathsPerOneMillion;
@@ -30,59 +97,59 @@ public class Country {
         this.casesPerOneMillion = casesPerOneMillion;
     }
 
-    public long getCritical() {
+    public String getCritical() {
         return critical;
     }
 
-    public void setCritical(long critical) {
+    public void setCritical(String critical) {
         this.critical = critical;
     }
 
-    public long getActive() {
+    public String getActive() {
         return active;
     }
 
-    public void setActive(long active) {
+    public void setActive(String active) {
         this.active = active;
     }
 
-    public long getRecovered() {
+    public String getRecovered() {
         return recovered;
     }
 
-    public void setRecovered(long recovered) {
+    public void setRecovered(String recovered) {
         this.recovered = recovered;
     }
 
-    public long getTodayDeaths() {
+    public String getTodayDeaths() {
         return todayDeaths;
     }
 
-    public void setTodayDeaths(long todayDeaths) {
+    public void setTodayDeaths(String todayDeaths) {
         this.todayDeaths = todayDeaths;
     }
 
-    public long getDeaths() {
+    public String getDeaths() {
         return deaths;
     }
 
-    public void setDeaths(long deaths) {
+    public void setDeaths(String deaths) {
         this.deaths = deaths;
     }
 
-    public long getTodayCases() {
+    public String getTodayCases() {
         return todayCases;
     }
 
-    public void setTodayCases(long todayCases) {
+    public void setTodayCases(String todayCases) {
         this.todayCases = todayCases;
     }
 
-    public long getCases() {
+    public String getCases() {
         return cases;
     }
 
-    public void setCases(long cases) {
+    public void setCases(String cases) {
         this.cases = cases;
     }
 
@@ -100,6 +167,14 @@ public class Country {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    public String getConfirmed() {
+        return confirmed;
+    }
+
+    public void setConfirmed(String confirmed) {
+        this.confirmed = confirmed;
     }
 
     public static class CountryInfo {

@@ -12,14 +12,10 @@
         android:roundIcon="@drawable/patient"
         android:supportsRtl="false"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.UI.Activities.AboutActivity" />
-        <activity android:name="com.example.UI.Activities.HomeActivity" />
-        <activity android:name="com.example.UI.Activities.EachCountryDataActivity" />
-        <activity android:name="com.example.UI.Activities.CountryWiseDataActivity" />
-        <activity android:name="com.example.UI.Activities.WorldActivity" />
-        <activity android:name="com.example.UI.Activities.MainActivity" />
-
-        <activity android:name="com.example.UI.Activities.SplashScreenActivity">
+        <activity android:name="com.example.UI.Activities.EachCountry" />
+        <activity android:name="com.example.UI.Activities.CountryWise" />
+        <activity android:name="com.example.UI.Activities.Main" />
+        <activity android:name="com.example.UI.Activities.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

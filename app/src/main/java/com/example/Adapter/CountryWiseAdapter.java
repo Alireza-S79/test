@@ -17,7 +17,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.example.UI.Activities.EachCountryDataActivity;
+import com.example.UI.Activities.EachCountry;
 import com.example.Models.CountyWiseModel;
 import com.example.covid19tracker.R;
 import java.text.NumberFormat;
@@ -39,6 +39,7 @@ import static com.example.Constants.COUNTRY_RECOVERED;
 import static com.example.Constants.COUNTRY_TESTS;
 
 public class CountryWiseAdapter extends RecyclerView.Adapter<CountryWiseAdapter.MyViewHolder> {
+
     private Context mContext;
     private ArrayList<CountyWiseModel> countryWiseModelArrayList;
     private String searchText = "";
@@ -74,10 +75,8 @@ public class CountryWiseAdapter extends RecyclerView.Adapter<CountryWiseAdapter.
         holder.tv_rankTextView.setText(countryRank + ".");
         Log.d("country total cases int", String.valueOf(countryTotalInt));
         holder.tv_countryTotalCases.setText(NumberFormat.getInstance().format(countryTotalInt));
-        //holder.tv_countryName.setText(countryName);
 
         if (searchText.length() > 0) {
-            //color your text here
             int index = countryName.indexOf(searchText);
             sb = new SpannableStringBuilder(countryName);
             Pattern word = Pattern.compile(searchText.toLowerCase());
@@ -85,7 +84,6 @@ public class CountryWiseAdapter extends RecyclerView.Adapter<CountryWiseAdapter.
             while (match.find()) {
                 ForegroundColorSpan fcs = new ForegroundColorSpan(Color.rgb(52, 195, 235)); //specify color here
                 sb.setSpan(fcs, match.start(), match.end(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
-                //index = stateName.indexOf(searchText,index+1);
             }
             holder.tv_countryName.setText(sb);
 
@@ -94,11 +92,12 @@ public class CountryWiseAdapter extends RecyclerView.Adapter<CountryWiseAdapter.
         }
 
         Glide.with(mContext).load(countryFlag).diskCacheStrategy(DiskCacheStrategy.DATA).into(holder.iv_flagImage);
+
         holder.lin_country.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 CountyWiseModel clickedItem = countryWiseModelArrayList.get(position);
-                Intent perCountryIntent = new Intent(mContext, EachCountryDataActivity.class);
+                Intent perCountryIntent = new Intent(mContext, EachCountry.class);
 
                 perCountryIntent.putExtra(COUNTRY_NAME, clickedItem.getCountry());
                 perCountryIntent.putExtra(COUNTRY_CONFIRMED, clickedItem.getConfirmed());
@@ -116,7 +115,6 @@ public class CountryWiseAdapter extends RecyclerView.Adapter<CountryWiseAdapter.
                 mContext.startActivity(perCountryIntent);
             }
         });
-
     }
 
     @Override
@@ -134,7 +132,9 @@ public class CountryWiseAdapter extends RecyclerView.Adapter<CountryWiseAdapter.
             tv_countryName = itemView.findViewById(R.id.layout_country_wise_country_name_textview);
             tv_countryTotalCases = itemView.findViewById(R.id.layout_country_wise_confirmed_textview);
             iv_flagImage = itemView.findViewById(R.id.layout_country_wise_flag_imageview);
+
             tv_rankTextView = itemView.findViewById(R.id.layout_country_wise_country_rank);
+
             lin_country = itemView.findViewById(R.id.layout_country_wise_lin);
         }
     }

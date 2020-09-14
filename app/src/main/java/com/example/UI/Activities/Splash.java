@@ -7,10 +7,12 @@ import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.covid19tracker.R;
 
-public class SplashScreenActivity extends AppCompatActivity {
+public class Splash extends AppCompatActivity {
 
     Animation sideAnim;
     TextView covid_tv;
@@ -20,19 +22,16 @@ public class SplashScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_splash_screen);
+        setContentView(R.layout.splash);
         covid_tv = findViewById(R.id.covid_tv);
         sideAnim = AnimationUtils.loadAnimation(this, R.anim.side_anim);
         covid_tv.setAnimation(sideAnim);
 
         Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent intent = new Intent(SplashScreenActivity.this, HomeActivity.class);
-                startActivity(intent);
-                finish();
-            }
+        handler.postDelayed(() -> {
+            Intent intent = new Intent(Splash.this, Main.class);
+            startActivity(intent);
+            finish();
         }, 2250);
     }
 }

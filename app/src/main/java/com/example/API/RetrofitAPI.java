@@ -2,8 +2,10 @@ package com.example.API;
 
 import com.example.Models.AllCases;
 import com.example.Models.Country;
+import com.example.Models.FinalCountry;
 
-import java.util.List;
+import java.util.ArrayList;
+
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -21,7 +23,7 @@ public class RetrofitAPI {
         return ourInstance;
     }
 
-    private RetrofitAPI() {
+    RetrofitAPI() {
         base = new Retrofit.Builder()
                 .baseUrl("https://corona.lmao.ninja/v2/")
                 .addConverterFactory(GsonConverterFactory.create())
@@ -29,16 +31,19 @@ public class RetrofitAPI {
         covidClient = base.create(COVIDClient.class);
     }
 
-    public Call<Country> getEgyptCases(){
-        return covidClient.getEgyptCases();
+    public Call<Country> getIranCases(){
+        return covidClient.getIranCases();
     }
 
-    public Call<List<Country>> getAllCountries(){
+    public Call<ArrayList<Country>> getAllCountries(){
         return covidClient.getAllCountries();
     }
 
     public Call<AllCases> getAllCases(){
         return covidClient.getAllCases();
+    }
+    public Call<FinalCountry> getFinalCountry() {
+        return covidClient.getFinalCountry();
     }
 
 }

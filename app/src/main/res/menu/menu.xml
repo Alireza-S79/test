@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/menu_about"
-        android:icon="@drawable/ic_help"
-        android:title="About us"
-        app:showAsAction="always" />
+        android:id="@+id/fsearch"
+        android:title="مشاهده لیست تمامی کشور ها"
+        app:showAsAction="always"
+        />
 
 </menu>

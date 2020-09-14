@@ -7,8 +7,6 @@
     android:background="@android:color/white"
     android:orientation="vertical">
 
-    <include layout="@layout/world_top" />
-
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/refresh"
         android:layout_width="match_parent"
@@ -43,7 +41,6 @@
 
                     <include layout="@layout/no_network_page" />
 
-                    <include layout="@layout/error_page" />
                 </FrameLayout>
             </ScrollView>
 

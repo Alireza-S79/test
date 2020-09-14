@@ -4,15 +4,37 @@
 
     <item
         android:id="@id/egyptFragment"
-        android:icon="@drawable/ic_iran"
+        android:icon="@drawable/iran"
         android:orderInCategory="1"
-        android:title="Iran"
+        android:title="ایران"
         app:showAsAction="always" />
 
-    <item android:id="@+id/worldFragment"
-        android:title="@string/world"
-        app:showAsAction="always"
+    <item
+        android:id="@+id/worldFragment"
+        android:icon="@drawable/ic_world"
         android:orderInCategory="2"
-        android:icon="@drawable/ic_world"/>
+        android:title="امروز"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_home"
+        android:orderInCategory="3"
+        android:title="صفحه اصلی"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/finalFragment"
+        android:icon="@drawable/virus"
+        android:orderInCategory="4"
+        android:title="جهانی"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/blankFragment"
+        android:icon="@drawable/ic_help"
+        android:orderInCategory="5"
+        android:title="سازنده"
+        app:showAsAction="always|withText" />
 
 </menu>

@@ -1,6 +1,6 @@
 package com.example.Models;
 
-public class CountyWiseModel {
+public class CountyWiseModel extends Country {
 
     private String country;
     private String confirmed;

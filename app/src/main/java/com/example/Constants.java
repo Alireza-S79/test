@@ -14,5 +14,4 @@ public class Constants {
     public static final String COUNTRY_RECOVERED = "recovered";
     public static final String COUNTRY_NEW_RECOVERED = "todayRecovered";
     public static final String COUNTRY_CONTINENT = "continent";
-
 }
